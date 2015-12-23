@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -14,13 +15,14 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Prism.Windows;
 
 namespace Soundboard
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    sealed partial class App : PrismApplication
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -33,6 +35,11 @@ namespace Soundboard
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+        }
+
+        protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)
+        {
+            return Task.FromResult<object>(null);
         }
 
         /// <summary>

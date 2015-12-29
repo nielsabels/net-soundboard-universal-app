@@ -8,10 +8,14 @@
     xmlns:prismMvvm="using:Prism.Windows.Mvvm"
     prismMvvm:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="MainPage"/>
+
+    <Grid Margin="8" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <GridView ItemsSource="{Binding Sounds}" SelectionMode="None">
+            <GridView.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Pat" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="#C33D27" />
+                </DataTemplate>
+            </GridView.HeaderTemplate>
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Width="310" Margin="0,20,20,20">

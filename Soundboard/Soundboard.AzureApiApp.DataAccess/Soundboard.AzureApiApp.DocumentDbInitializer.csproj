@@ -60,10 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Child.cs" />
-    <Compile Include="Models\Family.cs" />
-    <Compile Include="Models\Parent.cs" />
-    <Compile Include="Models\Pet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +76,10 @@
     <ProjectReference Include="..\Coolblue.Utils\Coolblue.Utils.csproj">
       <Project>{a602c235-de59-4d67-a786-ea8dd26c7a25}</Project>
       <Name>Coolblue.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Soundboard.AzureApiApp.Dto\Soundboard.AzureApiApp.Dto.csproj">
+      <Project>{a4bc081b-6146-4a58-9f6d-d82bbbc277ef}</Project>
+      <Name>Soundboard.AzureApiApp.Dto</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

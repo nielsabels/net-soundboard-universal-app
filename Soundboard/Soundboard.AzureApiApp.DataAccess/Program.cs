@@ -17,10 +17,10 @@
 
 using Coolblue.Utils;
 using Simple.CredentialManager;
+using Soundboard.AzureApiApp.Dto;
 
 namespace Soundboard.AzureApiApp.DataAccess
 {
-    using Soundboard.AzureApiApp.DataAccess.Models;
     using Microsoft.Azure.Documents;
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Azure.Documents.Linq;
@@ -97,7 +97,7 @@ namespace Soundboard.AzureApiApp.DataAccess
                     {
                         // 2.
                         Console.WriteLine("2. Getting reference to Database");
-                        Database database = ReadOrCreateDatabase("QuickStarts");
+                        Database database = ReadOrCreateDatabase("Sounds");
 
                         // 3.
                         Console.WriteLine("3. Getting reference to a DocumentCollection");
@@ -110,10 +110,6 @@ namespace Soundboard.AzureApiApp.DataAccess
                         // 5.
                         Console.WriteLine("5. Querying for Documents");
                         QueryDocuments(collection.SelfLink);
-
-                        // 6. Finally cleanup by deleting the Database
-                        Console.WriteLine("6. Cleaning Up");
-                        Cleanup(database.SelfLink);
                     }
                 }
                 catch (DocumentClientException docEx)
@@ -160,14 +156,16 @@ namespace Soundboard.AzureApiApp.DataAccess
                             .AsEnumerable()
                             .FirstOrDefault();
 
-
+            
             // In case there was no database matching, go ahead and create it. 
-            if (db == null)
+            if (db != null)
             {
-                Console.WriteLine("2. Database not found, creating");
-
-                db = client.CreateDatabaseAsync(new Database { Id = databaseId }).Result;
+                // delete it
+                Cleanup(db.SelfLink);
             }
+            
+            // create it
+            db = client.CreateDatabaseAsync(new Database { Id = databaseId }).Result;
 
             return db;
         }
@@ -207,65 +205,33 @@ namespace Soundboard.AzureApiApp.DataAccess
             // In DocumentDB every Document must have an "id" property. If you supply one, it must be unique. 
             // If you do not supply one, DocumentDB will generate a GUID for you and add it to the Document as "id".
             // You can disable the auto generaction of ids if you prefer by setting the disableAutomaticIdGeneration option on CreateDocumentAsync method
-            var task1 = client.CreateDocumentAsync(collectionLink, new Family
+
+            var task0 = client.DeleteDocumentCollectionAsync(collectionLink);
+
+            var task1 = client.CreateDocumentAsync(collectionLink, new Sound
             {
                 //even though the property is Id, when serialized to JSON it will be transformed to id (lowercase)
                 //if you want this behavior for other properties, then use the [JsonProperty] attribute to decorate your POCO properties
                 //and control the serialization behavior
+
                 Id = Guid.NewGuid().ToString(),
-                FamilyName = "Anderson",
-                Parents = new Parent[]
-                {
-                    new Parent{FirstName="Thomas"},
-                    new Parent{FirstName="Mary Kay"}
-                },
-                Children = new Child[]
-                {
-                    new Child{FirstName="John", Gender="male", Grade=7}
-                },
-                Pets = new Pet[]
-                {
-                    new Pet{Name="Fluffy", Type="Dog"}
-                }
+                Name = "He meisje",
+                ImagePath = "http://strengthandconditioningfitness.com/wp-content/uploads/2011/04/Kangaroos-jump-high-1.jpg",
             });
 
-            var task2 = client.CreateDocumentAsync(collectionLink, new Family
+            var task2 = client.CreateDocumentAsync(collectionLink, new Sound
             {
-                //notice, we are not setting Id here. It will be generated for us before the JSON gets sent over the wire
-                FamilyName = "Wakefield",
-                Parents = new Parent[]
-                {
-                    new Parent{FirstName="Robin"},
-                    new Parent{FirstName="Ben"}
-                },
-                Children = new Child[]
-                {
-                    new Child{FirstName="Jesse", Gender="female", Grade=1},
-                    new Child{FirstName="Lisa", Gender="female", Grade=8}
-                },
-                Pets = new Pet[]
-                {
-                    new Pet{Name="Goofy", Type="Dog"},
-                    new Pet{Name="Shadow", Type="Horse"}
-                }
-            });
+                //even though the property is Id, when serialized to JSON it will be transformed to id (lowercase)
+                //if you want this behavior for other properties, then use the [JsonProperty] attribute to decorate your POCO properties
+                //and control the serialization behavior
 
-            //here we are just generating a dynamic object, no POCO needed
-            var task3 = client.CreateDocumentAsync(collectionLink, new
-            {
-                FamilyName = "Adams",
-                Parents = new[]
-                {
-                    new {FirstName="Susan"},
-                },
-                Children = new[]
-                {
-                    new {FirstName="Megan", Gender="female"},
-                },
+                Id = Guid.NewGuid().ToString(),
+                Name = "Ik heb een mop",
+                ImagePath = "http://cbsnews2.cbsistatic.com/hub/i/r/2011/07/25/df3a8530-a644-11e2-a3f0-029118418759/thumbnail/620x350/0cb41f489b87587b34042d9793a7cab7/red_kangaroo.jpg",
             });
 
             // Wait for the above Async operations to finish executing
-            Task.WaitAll(task1, task2, task3);
+            Task.WaitAll(task1, task2);
 
             Console.WriteLine("4. Documents successfully created");
         }
@@ -279,38 +245,14 @@ namespace Soundboard.AzureApiApp.DataAccess
             // 1. Get each Document in the collection, 1 record at a time
             //    This is how to retrieve records in an async operation.
             //    You can control the number of results returned by adjusting MaxItemCount of FeedOptions
-            var feed = client.CreateDocumentQuery<Family>(collectionLink, new FeedOptions() { MaxItemCount = 1 }).AsDocumentQuery();
+            var feed = client.CreateDocumentQuery<Sound>(collectionLink, new FeedOptions() { MaxItemCount = 10 }).AsDocumentQuery();
             while (feed.HasMoreResults)
             {
-                foreach (Family family in feed.ExecuteNextAsync().Result)
+                foreach (Sound sound in feed.ExecuteNextAsync().Result)
                 {
-                    Console.WriteLine("5. Family Name is - {0}", family.FamilyName);
+                    Console.WriteLine("5. Sound Name is - {0}", sound.Name);
                 }
             }
-
-            // 2. LINQ Query by document FamilyName
-            var query = from f in client.CreateDocumentQuery<Family>(collectionLink)
-                        where f.FamilyName == "Anderson"
-                        select f;
-
-            Console.WriteLine("5. Family Name is - {0}", query.AsEnumerable().FirstOrDefault<Family>().FamilyName);
-
-            // 3. LINQ Lambda with FamilyName attribute
-            query = client.CreateDocumentQuery<Family>(collectionLink).Where(f => f.FamilyName == "Wakefield");
-
-            Console.WriteLine("5. Family Name is - {0}", query.AsEnumerable().FirstOrDefault<Family>().FamilyName);
-
-            // 4. SQL query for a family record by a Parent's FirstName using intra-document JOINS
-            //    For assistance with the SQL query grammar, refer to http://www.documentdb.com/sql/demo
-            query = client.CreateDocumentQuery<Family>(collectionLink, new SqlQuerySpec
-            {
-                QueryText = "SELECT VALUE f FROM Families f JOIN p IN f.Parents WHERE (p.FirstName = @name)",
-                Parameters = new SqlParameterCollection()  {
-                          new SqlParameter("@name", "Susan")
-                     }
-            });
-
-            Console.WriteLine("5. Family Name is - {0}", query.AsEnumerable().FirstOrDefault<Family>().FamilyName);
         }
 
         private static void Cleanup(string databaseId)

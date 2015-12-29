@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Azure.Documents;
 
 namespace Soundboard.AzureApiApp.Dto
 {
-    public class Sound
+    public class Sound : Resource
     {
         public string Id { get; set; }
         public string Name { get; set; }

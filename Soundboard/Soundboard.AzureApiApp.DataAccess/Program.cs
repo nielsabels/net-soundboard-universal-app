@@ -210,22 +210,12 @@ namespace Soundboard.AzureApiApp.DataAccess
 
             var task1 = client.CreateDocumentAsync(collectionLink, new Sound
             {
-                //even though the property is Id, when serialized to JSON it will be transformed to id (lowercase)
-                //if you want this behavior for other properties, then use the [JsonProperty] attribute to decorate your POCO properties
-                //and control the serialization behavior
-
-                Id = Guid.NewGuid().ToString(),
                 Name = "He meisje",
                 ImagePath = "http://strengthandconditioningfitness.com/wp-content/uploads/2011/04/Kangaroos-jump-high-1.jpg",
             });
 
             var task2 = client.CreateDocumentAsync(collectionLink, new Sound
             {
-                //even though the property is Id, when serialized to JSON it will be transformed to id (lowercase)
-                //if you want this behavior for other properties, then use the [JsonProperty] attribute to decorate your POCO properties
-                //and control the serialization behavior
-
-                Id = Guid.NewGuid().ToString(),
                 Name = "Ik heb een mop",
                 ImagePath = "http://cbsnews2.cbsistatic.com/hub/i/r/2011/07/25/df3a8530-a644-11e2-a3f0-029118418759/thumbnail/620x350/0cb41f489b87587b34042d9793a7cab7/red_kangaroo.jpg",
             });

@@ -61,7 +61,7 @@ namespace Soundboard
         {
             base.ConfigureContainer();
 
-
+            Bootstrapper.Configure(Container);
         }
     }
 }

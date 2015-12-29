@@ -56,5 +56,12 @@ namespace Soundboard
         {
             await Task.Delay(2500);
         }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+
+
+        }
     }
 }

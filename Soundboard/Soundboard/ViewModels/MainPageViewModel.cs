@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Prism.Mvvm;
 using Prism.Windows.Navigation;
+using Soundboard.Dto;
+using Soundboard.Services;
 
 namespace Soundboard.ViewModels
 {
-    public class MainPageViewModel : BindableBase, INavigationAware
+    public class MainPageViewModel : BindableBase
     {
-        public void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
+        public ObservableCollection<Sound> Sounds { get; private set; } 
+
+        public MainPageViewModel(ISoundService soundService)
         {
-            throw new NotImplementedException();
+            Sounds = new ObservableCollection<Sound>(soundService.GetAllSounds());
         }
 
-        public void OnNavigatingFrom(NavigatingFromEventArgs e, Dictionary<string, object> viewModelState, bool suspending)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

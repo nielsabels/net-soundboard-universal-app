@@ -11,5 +11,8 @@
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Text="MainPage"/>
+        <GridView ItemsSource="{Binding Sounds}">
+        </GridView>
+        
     </Grid>
 </Page>

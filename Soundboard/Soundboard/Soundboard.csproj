@@ -98,6 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -129,6 +130,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Soundboard.Dto\Soundboard.Dto.csproj">
+      <Project>{984ef918-9e6c-4fc9-afcd-858db93374be}</Project>
+      <Name>Soundboard.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Soundboard.Services\Soundboard.Services.csproj">
+      <Project>{5527C018-87CA-451D-8513-4D1C1D095D3B}</Project>
+      <Name>Soundboard.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

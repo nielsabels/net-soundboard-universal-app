@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundboard.Dto", "Soundboar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundboard.AzureApiApp", "Soundboard.AzureApiApp\Soundboard.AzureApiApp.csproj", "{96E089A1-F004-448D-8D7F-CA8439278F7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundboard.AzureApiApp.Dto", "Soundboard.AzureApiApp.Dto\Soundboard.AzureApiApp.Dto.csproj", "{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,22 @@ Global
 		{96E089A1-F004-448D-8D7F-CA8439278F7F}.Release|x64.Build.0 = Release|Any CPU
 		{96E089A1-F004-448D-8D7F-CA8439278F7F}.Release|x86.ActiveCfg = Release|Any CPU
 		{96E089A1-F004-448D-8D7F-CA8439278F7F}.Release|x86.Build.0 = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|ARM.Build.0 = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|x64.Build.0 = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Debug|x86.Build.0 = Debug|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|ARM.Build.0 = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|x64.ActiveCfg = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|x64.Build.0 = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

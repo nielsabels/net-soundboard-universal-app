@@ -15,5 +15,12 @@ namespace Soundboard.Dto
             get { return _displayName; }
             set { SetProperty(ref _displayName, value); }
         }
+
+        private string _pictureUri;
+        public string PictureUri
+        {
+            get { return _pictureUri; }         
+            set { SetProperty(ref _pictureUri, value); }
+        }
     }
 }

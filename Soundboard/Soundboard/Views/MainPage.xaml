@@ -11,8 +11,21 @@
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Text="MainPage"/>
-        <GridView ItemsSource="{Binding Sounds}">
+        <GridView ItemsSource="{Binding Sounds}" SelectionMode="None">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="310" Margin="0,20,20,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding PictureUri}" Height="180" Stretch="UniformToFill" />
+                        <StackPanel Grid.Row="1" Margin="0,8,0,0">
+                            <TextBlock Text="{Binding DisplayName}" Style="{StaticResource TitleTextBlockStyle}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
         </GridView>
-        
     </Grid>
 </Page>

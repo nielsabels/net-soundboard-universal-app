@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <Grid Margin="8" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView ItemsSource="{Binding Sounds}" SelectionMode="None">
+        <GridView ItemsSource="{Binding Sounds}" SelectionMode="None" SelectedItem="{Binding SelectedSound}">
             <GridView.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="Pat" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="#C33D27" />

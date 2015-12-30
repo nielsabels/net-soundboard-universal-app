@@ -20,7 +20,6 @@ namespace Soundboard.ViewModels
 {
     public class MainPageViewModel : BindableBase
     {
-        private readonly IAudioPlayer _audioPlayer;
         public ObservableCollection<Sound> Sounds { get; private set; }
 
         public DelegateCommand<Sound> PlaySoundCommand { get; set; }
@@ -35,13 +34,12 @@ namespace Soundboard.ViewModels
             set
             {
                 SetProperty(ref _selectedSound, value);
-                PlaySound(SelectedSound);
+                Task.Run(() => PlaySound(SelectedSound));
             }
         }
 
-        public MainPageViewModel(ISoundService soundService, IAudioPlayer audioPlayer)
+        public MainPageViewModel(ISoundService soundService)
         {
-            _audioPlayer = audioPlayer;
             Sounds = new ObservableCollection<Sound>(soundService.GetAllSounds());
 
             PlaySoundCommand = DelegateCommand<Sound>.FromAsyncHandler(PlaySound);
@@ -49,10 +47,11 @@ namespace Soundboard.ViewModels
 
         public async Task PlaySound(Sound sound)
         {
-            StorageFile file3 = await StorageFile.GetFileFromPathAsync(@"C:\Users\Niels\AppData\Local\Packages\cfbc173b-fc00-49bc-9872-222ec4118afa_y3255gwp3wtsr\LocalState\test2.mp3");
+            //StorageFile file3 = await StorageFile.GetFileFromPathAsync(@"C:\Users\Niels\AppData\Local\Packages\cfbc173b-fc00-49bc-9872-222ec4118afa_y3255gwp3wtsr\LocalState\test2.mp3");
+            StorageFile file3 = await StorageFile.GetFileFromPathAsync(@"http://hcmaslov.d-real.sci-nnov.ru/public/mp3/Elvis%20Presley/Elvis%20Presley%20'A%20Big%20Hunk%20Of%20Love'.mp3");
+            
             BackgroundMediaPlayer.Current.SetFileSource(file3);
             BackgroundMediaPlayer.Current.Play();
-           
         }
     }
 }

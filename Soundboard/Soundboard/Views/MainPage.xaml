@@ -6,11 +6,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prismMvvm="using:Prism.Windows.Mvvm"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:media="using:Microsoft.Xaml.Interactions.Media"
     prismMvvm:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
 
     <Grid Margin="8" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView ItemsSource="{Binding Sounds}" SelectionMode="None" SelectedItem="{Binding SelectedSound}">
+        <GridView x:Name="SoundsGridView" ItemsSource="{Binding Sounds}" SelectedItem="{Binding SelectedSound}">
             <GridView.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="Pat" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="#C33D27" />

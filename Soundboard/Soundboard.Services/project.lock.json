@@ -201,6 +201,14 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -1777,6 +1785,14 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3388,6 +3404,14 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5006,6 +5030,14 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -6615,6 +6647,14 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8233,6 +8273,14 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -9842,6 +9890,14 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -11866,6 +11922,22 @@
         "ref/net46/Microsoft.Win32.Primitives.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._"
+      ]
+    },
+    "NAudio/1.7.3": {
+      "sha512": "RfjCKqewCJ7OhVRqkVgiJv5ByPzPk5YWElyC7jLqcV2a9777HDGU00kmVzoMV9gbcNiTJn9ijVrTAgq4GeQP2w==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net35/NAudio.dll",
+        "lib/net35/NAudio.XML",
+        "lib/windows8/NAudio.Win8.dll",
+        "lib/windows8/NAudio.Win8.XML",
+        "license.txt",
+        "NAudio.nuspec",
+        "package/services/metadata/core-properties/b8fe86bb57934d148611287e4eba158c.psmdcp",
+        "readme.txt"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -14566,7 +14638,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
+      "NAudio >= 1.7.3"
     ],
     "UAP,Version=v10.0": []
   }

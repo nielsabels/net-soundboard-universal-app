@@ -12,7 +12,7 @@ namespace Soundboard.AzureApiApp.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            
+            return null;
         }
     }
 }

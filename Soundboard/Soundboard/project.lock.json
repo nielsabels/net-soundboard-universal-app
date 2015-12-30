@@ -250,6 +250,14 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        }
+      },
       "Prism.Core/6.1.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -1942,6 +1950,14 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "Prism.Core/6.1.0": {
@@ -3669,6 +3685,14 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "Prism.Core/6.1.0": {
@@ -5403,6 +5427,14 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        }
+      },
       "Prism.Core/6.1.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -7128,6 +7160,14 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "Prism.Core/6.1.0": {
@@ -8862,6 +8902,14 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        }
+      },
       "Prism.Core/6.1.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -10587,6 +10635,14 @@
         "runtime": {
           "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        }
+      },
+      "NAudio/1.7.3": {
+        "compile": {
+          "lib/windows8/NAudio.Win8.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/NAudio.Win8.dll": {}
         }
       },
       "Prism.Core/6.1.0": {
@@ -12763,6 +12819,22 @@
         "lib/uap10.0/Microsoft.Xaml.Interactivity/Properties/Microsoft.Xaml.Interactivity.rd.xml",
         "Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec",
         "package/services/metadata/core-properties/3c85324cf8b64508a39f4ccba86cb561.psmdcp"
+      ]
+    },
+    "NAudio/1.7.3": {
+      "sha512": "RfjCKqewCJ7OhVRqkVgiJv5ByPzPk5YWElyC7jLqcV2a9777HDGU00kmVzoMV9gbcNiTJn9ijVrTAgq4GeQP2w==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net35/NAudio.dll",
+        "lib/net35/NAudio.XML",
+        "lib/windows8/NAudio.Win8.dll",
+        "lib/windows8/NAudio.Win8.XML",
+        "license.txt",
+        "NAudio.nuspec",
+        "package/services/metadata/core-properties/b8fe86bb57934d148611287e4eba158c.psmdcp",
+        "readme.txt"
       ]
     },
     "Prism.Core/6.1.0": {
@@ -15553,6 +15625,7 @@
       "Microsoft.ApplicationInsights.WindowsApps >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "Microsoft.Xaml.Behaviors.Uwp.Managed >= 1.0.3",
+      "NAudio >= 1.7.3",
       "Prism.Unity >= 6.1.1"
     ],
     "UAP,Version=v10.0": []

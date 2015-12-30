@@ -9,11 +9,12 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:media="using:Microsoft.Xaml.Interactions.Media"
+    xmlns:playback="using:Windows.Media.Playback"
     prismMvvm:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
 
     <Grid Margin="8" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView x:Name="SoundsGridView" ItemsSource="{Binding Sounds}" SelectedItem="{Binding SelectedSound}">
+        <GridView x:Name="SoundsGridView" ItemsSource="{Binding Sounds}" SelectedItem="{Binding SelectedSound, Mode=TwoWay}">
             <GridView.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="Pat" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="#C33D27" />
@@ -21,16 +22,18 @@
             </GridView.HeaderTemplate>
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="310" Margin="0,20,20,20">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Image Source="{Binding PictureUri}" Height="180" Stretch="UniformToFill" />
-                        <StackPanel Grid.Row="1" Margin="0,8,0,0">
-                            <TextBlock Text="{Binding DisplayName}" Style="{StaticResource TitleTextBlockStyle}" />
-                        </StackPanel>
-                    </Grid>
+                    
+                        <Grid Width="310" Margin="0,20,20,20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding PictureUri}" Height="180" Stretch="UniformToFill" />
+                            <StackPanel Grid.Row="1" Margin="0,8,0,0">
+                                <TextBlock Text="{Binding DisplayName}" Style="{StaticResource TitleTextBlockStyle}" />
+                            </StackPanel>
+                        </Grid>
+                    
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>

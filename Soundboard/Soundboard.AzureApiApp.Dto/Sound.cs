@@ -9,7 +9,6 @@ namespace Soundboard.AzureApiApp.Dto
 {
     public class Sound : Resource
     {
-        public string Id { get; set; }
         public string Name { get; set; }
         public string ImagePath { get; set; }
     }

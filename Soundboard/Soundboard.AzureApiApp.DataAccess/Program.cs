@@ -156,16 +156,13 @@ namespace Soundboard.AzureApiApp.DataAccess
                             .AsEnumerable()
                             .FirstOrDefault();
 
-            
             // In case there was no database matching, go ahead and create it. 
-            if (db != null)
+            if (db == null)
             {
-                // delete it
-                Cleanup(db.SelfLink);
+                Console.WriteLine("2. Database not found, creating");
+
+                db = client.CreateDatabaseAsync(new Database { Id = databaseId }).Result;
             }
-            
-            // create it
-            db = client.CreateDatabaseAsync(new Database { Id = databaseId }).Result;
 
             return db;
         }
@@ -206,7 +203,13 @@ namespace Soundboard.AzureApiApp.DataAccess
             // If you do not supply one, DocumentDB will generate a GUID for you and add it to the Document as "id".
             // You can disable the auto generaction of ids if you prefer by setting the disableAutomaticIdGeneration option on CreateDocumentAsync method
 
-            var task0 = client.DeleteDocumentCollectionAsync(collectionLink);
+            Console.WriteLine("4. Deleting existing documents");
+
+            var query = client.CreateDocumentQuery<Sound>(collectionLink);
+            foreach (Sound sound in query.AsEnumerable().ToList())
+            {
+                client.DeleteDocumentAsync(sound.SelfLink);
+            }
 
             var task1 = client.CreateDocumentAsync(collectionLink, new Sound
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Azure.Documents.Client;
 
 namespace Soundboard.AzureApiApp.Repositories
 {
@@ -13,6 +14,9 @@ namespace Soundboard.AzureApiApp.Repositories
 
     public class SoundboardRepository : ISoundboardRepository 
     {
+        public SoundboardRepository(DocumentClient documentClient)
+        {
 
+        }
     }
 }

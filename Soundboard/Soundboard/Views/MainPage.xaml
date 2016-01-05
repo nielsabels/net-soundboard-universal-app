@@ -14,7 +14,13 @@
     mc:Ignorable="d">
 
     <Grid Margin="8" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView x:Name="SoundsGridView" ItemsSource="{Binding Sounds}" SelectedItem="{Binding SelectedSound, Mode=TwoWay}">
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="500"></RowDefinition>
+            <RowDefinition MaxHeight="200"></RowDefinition>
+        </Grid.RowDefinitions>
+        <GridView CanDragItems="True" CanReorderItems="True" CanDrag="True" Grid.Row="0" x:Name="SoundsGridView" ItemsSource="{Binding Sounds}"
+                  SelectedItem="{Binding SelectedSound, Mode=TwoWay}" >
+
             <GridView.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="Pat" Style="{ThemeResource SubheaderTextBlockStyle}" Foreground="#C33D27" />
@@ -22,8 +28,7 @@
             </GridView.HeaderTemplate>
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    
-                        <Grid Width="310" Margin="0,20,20,20">
+                    <Grid Width="310" Margin="0,20,20,20">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
@@ -37,5 +42,10 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
+
+        <MediaElement Grid.Row="1" Name="mePlayer" AudioCategory="Movie"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                  AreTransportControlsEnabled="False"></MediaElement>
+        
+
     </Grid>
 </Page>

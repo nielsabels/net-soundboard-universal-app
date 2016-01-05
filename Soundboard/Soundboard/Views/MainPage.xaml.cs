@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Soundboard.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,9 +23,13 @@ namespace Soundboard.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private MainPageViewModel viewModel;
+
         public MainPage()
         {
             this.InitializeComponent();
+            viewModel = this.DataContext as MainPageViewModel;
+            viewModel.MePlayer = mePlayer;
         }
     }
 }

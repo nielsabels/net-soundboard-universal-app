@@ -19,8 +19,11 @@ namespace Soundboard.Dto
         private string _pictureUri;
         public string PictureUri
         {
-            get { return _pictureUri; }         
+            get { return _pictureUri; }
             set { SetProperty(ref _pictureUri, value); }
         }
+
+        public string SoundUri { get; set; }
+
     }
 }

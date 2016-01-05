@@ -42,7 +42,7 @@ namespace Soundboard.ViewModels
 
         public MediaElement MePlayer { get; set; }
 
-        public MainPageViewModel(ISoundService soundServiceStub)
+        public MainPageViewModel(ISoundServiceStub soundServiceStub)
         {
             Sounds = new ObservableCollection<Sound>(soundServiceStub.GetAllSounds());
 

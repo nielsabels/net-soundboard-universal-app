@@ -13,7 +13,7 @@ namespace Soundboard
     {
         public static void Configure(IUnityContainer unityContainer)
         {
-            unityContainer.RegisterType<ISoundService, ISoundServiceStub>();
+            unityContainer.RegisterType<ISoundServiceStub, ISoundServiceStub>();
         }
     }
 }

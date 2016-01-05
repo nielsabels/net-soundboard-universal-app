@@ -7,12 +7,12 @@ using Soundboard.Dto;
 
 namespace Soundboard.Services
 {
-    public interface ISoundService
+    public interface ISoundServiceStub
     {
         List<Sound> GetAllSounds();
     }
 
-    public class SoundService : ISoundService
+    public class SoundServiceStub : ISoundServiceStub
     {
         public List<Sound> GetAllSounds()
         {
@@ -22,7 +22,6 @@ namespace Soundboard.Services
                 {
                     DisplayName = "He meisje",
                     PictureUri = "http://cbsnews2.cbsistatic.com/hub/i/r/2011/07/25/df3a8530-a644-11e2-a3f0-029118418759/thumbnail/620x350/0cb41f489b87587b34042d9793a7cab7/red_kangaroo.jpg",
-                    //SoundUri = "https://www.dropbox.com/s/3gdw15qaabiy75u/MOTORMOVIE.mp4?dl=1"
                     SoundUri = "https://dl.dropboxusercontent.com/u/256165/Pat/pat%20-%20hoi%20meisje.mp3",
                 },
                 new Sound()

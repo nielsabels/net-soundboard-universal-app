@@ -107,7 +107,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SoundService.cs" />
+    <Compile Include="ISoundServiceStub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Soundboard.Services.rd.xml" />
   </ItemGroup>

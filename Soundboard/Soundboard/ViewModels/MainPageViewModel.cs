@@ -42,9 +42,9 @@ namespace Soundboard.ViewModels
 
         public MediaElement MePlayer { get; set; }
 
-        public MainPageViewModel(ISoundService soundService)
+        public MainPageViewModel(ISoundService soundServiceStub)
         {
-            Sounds = new ObservableCollection<Sound>(soundService.GetAllSounds());
+            Sounds = new ObservableCollection<Sound>(soundServiceStub.GetAllSounds());
 
             PlaySoundCommand = new DelegateCommand<Sound>(PlaySound);
         }

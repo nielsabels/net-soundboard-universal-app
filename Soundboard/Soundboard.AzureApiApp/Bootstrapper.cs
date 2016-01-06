@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Coolblue.Utils;
+using Utils;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Practices.Unity;
 

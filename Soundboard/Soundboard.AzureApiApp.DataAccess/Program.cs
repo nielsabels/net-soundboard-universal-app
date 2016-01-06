@@ -15,7 +15,7 @@
 //----------------------------------------------------------------------------------
 
 
-using Coolblue.Utils;
+using Utils;
 using Simple.CredentialManager;
 using Soundboard.AzureApiApp.Dto;
 

@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundboard.AzureApiApp.Dto"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundboard.AzureApiApp.DocumentDbInitializer", "Soundboard.AzureApiApp.DataAccess\Soundboard.AzureApiApp.DocumentDbInitializer.csproj", "{4DD1A6EE-38A2-4963-868A-574FB8D000FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coolblue.Utils", "Coolblue.Utils\Coolblue.Utils.csproj", "{A602C235-DE59-4D67-A786-EA8DD26C7A25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Coolblue.Utils\Utils.csproj", "{A602C235-DE59-4D67-A786-EA8DD26C7A25}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soundboard.AzureApiApp.Repositories", "Soundboard.AzureApiApp.Repositories\Soundboard.AzureApiApp.Repositories.csproj", "{6FCEF08F-E258-4238-B03A-8FFCDF4A1672}"
 EndProject

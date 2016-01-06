@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CredentialManagement;
 
-namespace Coolblue.Utils
+namespace Utils
 {
     /// <summary>
     /// Interface for obtaining credentials (username and password) from credential managers

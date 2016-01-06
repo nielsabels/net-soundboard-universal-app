@@ -46,6 +46,12 @@
     <Compile Include="SoundboardRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Soundboard.AzureApiApp.Dto\Soundboard.AzureApiApp.Dto.csproj">
+      <Project>{A4BC081B-6146-4A58-9F6D-D82BBBC277EF}</Project>
+      <Name>Soundboard.AzureApiApp.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -189,6 +189,10 @@
       <Project>{a4bc081b-6146-4a58-9f6d-d82bbbc277ef}</Project>
       <Name>Soundboard.AzureApiApp.Dto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Soundboard.AzureApiApp.Repositories\Soundboard.AzureApiApp.Repositories.csproj">
+      <Project>{6FCEF08F-E258-4238-B03A-8FFCDF4A1672}</Project>
+      <Name>Soundboard.AzureApiApp.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,7 +1,8 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "NAudio": "1.7.3"
+    "NAudio": "1.7.3",
+    "Microsoft.CSharp": "4.0.0"
   },
   "frameworks": {
     "uap10.0": {}
